@@ -7,9 +7,16 @@ module.exports = {
                 Karla: ['Karla','sans-serif']
             },
 
+
             colors: {
-                'light-coffee': '#c89f94'
+                'coffee': {
+                    50: '#e8d6d0',
+                    200: '#c89f94',
+                    400: '#a25f4b',
+                    600: '#744838'
+                }
             },
+
 
             keyframes: {
                 slideDown: {
@@ -17,6 +24,7 @@ module.exports = {
                     '100%': { transform: 'translateY(0)' },
                 }
             },
+
 
             animation: {
                 slideDown: 'slideDown .4s ease-in-out',
