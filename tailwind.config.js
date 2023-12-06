@@ -13,8 +13,8 @@ module.exports = {
 
             keyframes: {
                 slideDown: {
-                  '0%': { transform: 'translateY(-100%)' },
-                  '100%': { transform: 'translateY(0)' },
+                    '0%': { transform: 'translateY(-100%)' },
+                    '100%': { transform: 'translateY(0)' },
                 }
             },
 
