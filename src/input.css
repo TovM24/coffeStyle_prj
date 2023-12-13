@@ -36,9 +36,9 @@
 }
 
 .vmt-subheadline-label {
-    @apply uppercase mx-4 tracking-widest text-gray-500 font-medium text-xs text-center;
+    @apply uppercase mx-4 tracking-[0.2em] text-gray-500 font-medium text-xs text-center;
 }
 
 .vmt-button {
-    @apply text-center uppercase tracking-wider py-4 px-8 text-sm font-semibold cursor-pointer hover:bg-opacity-95;
+    @apply text-center uppercase tracking-[0.2em] py-4 px-8 text-sm font-semibold cursor-pointer hover:bg-opacity-95;
 }
