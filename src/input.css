@@ -28,7 +28,7 @@
 }
 
 .vmt-subheadline {
-    @apply flex justify-center items-center mb-24;
+    @apply flex justify-center items-center my-20;
 }
 
 .vmt-subheadline-deco-line {
@@ -41,4 +41,60 @@
 
 .vmt-button {
     @apply text-center uppercase tracking-[0.2em] py-4 px-8 text-sm font-semibold cursor-pointer hover:bg-opacity-95;
+}
+
+#root {
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    /* ... */
+    /* perspective được sử dụng trong 3D transformations để định nghĩa điểm nhìn của không gian 3 chiều. Trong trường hợp  "perspective: 2px;" có nghĩa là các phần tử trong không gian 3 chiều sẽ có điểm nhìn từ một khoản cách trong khoản 2px. Nó ảnh hưởng đến các phần tử được hiển thị và biến đổi trong không gian 3d khi ap dụng các thuộc tính như "rotateX", "rotateY", hoặc "rotateZ". Điều này tạo ra hiệu ứng sâu, phẳng hoặc biến đổi không gian khác cho các phần tử. Giá trị của perspective có thể được điều chỉnh để tạo ra các hiệu ứng 3d khác nhau */
+    perspective: 2px;
+}
+
+.vmt-parallax,
+.vmt-no-parallax {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-direction: column;
+}
+
+.vmt-parallax {
+    height: 40vh;
+}
+
+.vmt-no-parallax {
+    height: auto;
+    z-index: 999;
+    background: white;
+}
+
+.vmt-parallax-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* ... */
+    z-index: -1;
+    background-size: cover;
+    background-position: center;
+    /* Cố định hình nền phần tử khi cuộn trang */
+    background-attachment: fixed;
+}
+
+
+
+@media screen(xl) {
+    .vmt-parallax {
+        height: 70vh;
+
+        /* transform-style được sử dụng để các định cách các phần tử con của 1 phần tử được xử lý khi sử dụng 3D transformations trong trường hợp này "transform-style: preserve-3d;" được sử dụng để bảo toàn các biến đổi 3d của các phần tử con trong không gian 3 chiều. Khi áp dụng thêm transform 3D cho một phần tử cha và muốn các phần tử con bên trong nó cũng thể hiện biến đổi 3d mà không bị làm phẳng (flattened) lại, sử dụng giá trị "preserve-3d" để duy trì không gian 3 chiều cho các phần tử con. Điều này CHO PHÉP CÁC PHẦN TỬ CON ĐƯỢC BIẾN ĐỔI 3D MÀ KHÔNG ẢNH HƯỞNG BỞI transform 3D CỦA PHẦN TỬ CHA */
+        transform-style: preserve-3d;
+    }
+
+    .vmt-parallax-img {
+        /* translateZ(-1px) dịch chuyển (translate) theo trục Z trong không gian 3 chiều. Giá trị "-1px" cho translateZ đưa phần tử về phía sau 1 pixel theo trục Z. Trục Z là trục mà khi di chuyển theo đó, phần tử sẽ có cảm giác như đang tiến về hoặc xa hơn/gần hơn với người xem */
+        transform: translateZ(-1px) scale(1.5);
+    }
 }
